@@ -39,8 +39,28 @@ export class CompanyService {
     }
 
     async getCompanies() {
-        const users = await this.companyModel.find().exec();
-        return users;
+        try{
+        const ListOfCompanies = await this.companyModel.find().exec();
+        if(ListOfCompanies){
+        return {
+            StatusCode: HttpStatus.OK,
+            Message:'List of Companies',
+            Data:{
+                ListingCompanies: ListOfCompanies
+            }
+        }
+    }
+    return{
+        StatusCode:HttpStatus.BAD_REQUEST,
+        Message:"Invalid Request"
+    }
+
+}catch(error){
+    return{
+        StatusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+        Message: error
+    }
+     }
     }
 
     async delete(body: DeleteCompanyDto) {
