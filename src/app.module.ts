@@ -8,6 +8,9 @@ import { customerAdminModule } from './customer-admin/customerAdmin.module';
 import { companyModule } from './company/company.module';
 import { usersModule } from './users/users.module';
 import { formsManageModule } from './forms-manage/formsManage.module';
+import { LoginController } from './login/login.controller';
+import { LoginService } from './login/login.service';
+import { registerModule } from './register/register.module';
 
 @Module({
   imports: [ MongooseModule.forRootAsync({useClass : MongooseConfigService}),
@@ -15,8 +18,9 @@ import { formsManageModule } from './forms-manage/formsManage.module';
              customerAdminModule,
              companyModule,
             usersModule,
-            formsManageModule],
-  controllers: [AppController],
-  providers: [AppService],
+            formsManageModule,
+            registerModule],
+  controllers: [AppController, LoginController],
+  providers: [AppService, LoginService],
 })
 export class AppModule {}

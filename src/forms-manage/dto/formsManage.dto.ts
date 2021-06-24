@@ -1,7 +1,15 @@
 import { IsNotEmpty } from "class-validator";
 export class formsManageDto{
-    @IsNotEmpty()
+    
     Email: string
-    @IsNotEmpty()
+     
     Allow?: string
+
+    Values: string
+
+    AddMore: addMore[]
+}
+
+export class addMore{
+    moreValues: string
 }

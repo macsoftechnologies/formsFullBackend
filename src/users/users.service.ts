@@ -73,7 +73,7 @@ export class UsersService {
 
     }
 
-    async UserDetails(Email: string) {
+    async UserDetails(Email: any) {
         try {
 
             const userResponse = await this.usersModel.findOne({ Email: Email })
@@ -103,7 +103,7 @@ export class UsersService {
     }
 
 
-    async UsersList(Company_Id: string) {
+    async UsersList(Company_Id: any) {
         try {
 
             const userResponse = await this.usersModel.find({ Company_Id: Company_Id})
