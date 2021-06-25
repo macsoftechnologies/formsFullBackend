@@ -1,4 +1,4 @@
-import { Controller, Post, Body, HttpStatus, Get, Delete, Put } from '@nestjs/common';
+import { Controller, Post, Body, HttpStatus, Get, Delete, Put, Param } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { companyCreationDto, DeleteCompanyDto } from './dto/company.dto';
 
@@ -34,7 +34,7 @@ export class CompanyController {
     }
 
 // Deletting Company 
-@Delete('/delete')
+@Post('/delete')
 async deleteUser(@Body() req: DeleteCompanyDto) { 
   try {
     let response = await this.companyService.delete(req);
