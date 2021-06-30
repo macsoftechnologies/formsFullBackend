@@ -19,7 +19,7 @@ export class UsersController {
         }
     }
 
-    @Delete('/delete')
+    @Post('/delete')
     async deleteUser(@Body() req: DeleteUserDto) { 
       try {
         let response = await this.usersService.delete(req);
