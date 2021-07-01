@@ -46,9 +46,9 @@ export class users extends Document{
    
     @Prop()
     CompanyId: CompanyIdStatus
-    @Prop({required : true })
+    @Prop()
     Forms: formStatus
-    @Prop({required : true , unique:true , default : uuid})
+    @Prop({ unique:true , default : uuid})
     UserId: string
     @Prop({required : true, unique:true})
     Email: EmailStatus
