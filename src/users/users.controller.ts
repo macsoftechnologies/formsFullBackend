@@ -48,10 +48,10 @@ export class UsersController {
     }
   
     @Get('/listOfUsers')
-    async listOfUsers(@Query('Company_Id') Company_Id : string) {
-        console.log(Company_Id)
+    async listOfUsers() {
+        console.log()
         try {
-            const response = await this.usersService.UsersList(Company_Id)
+            const response = await this.usersService.UsersList()
             return response
         } catch (error) {
             return {

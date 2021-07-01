@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from 'mongoose';
 import { v4 as uuid } from 'uuid';
-export  class forms{
+export  class formStatus{
     form:string
     @Prop({default:"active"})
     formStatus:string
@@ -45,24 +45,24 @@ export  class CountryStatus{
 export class users extends Document{
    
     @Prop()
-    Company_Id: CompanyIdStatus[]
+    CompanyId: CompanyIdStatus
     @Prop({required : true })
-    FormType: forms[]
+    Forms: formStatus
     @Prop({required : true , unique:true , default : uuid})
     UserId: string
     @Prop({required : true, unique:true})
-    Email: EmailStatus[]
+    Email: EmailStatus
     @Prop({default: "Active"})
     UserStatus: string
     @Prop()
-    FirstName:FirstNameStatus[]
+    FirstName: FirstNameStatus
     @Prop()
-    LastName:LastNameStatus[]
+    LastName: LastNameStatus
     @Prop()
-    PhoneNumber:PhoneNumberStatus[]
+    PhoneNumber: PhoneNumberStatus
     @Prop()    
-    Country:CountryStatus[]
+    Country: CountryStatus
     @Prop()
-    State:StateStatus[]
+    State: StateStatus
 }
 export const  usersSchema = SchemaFactory.createForClass(users);

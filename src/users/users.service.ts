@@ -103,10 +103,10 @@ export class UsersService {
     }
 
 
-    async UsersList(Company_Id: any) {
+    async UsersList() {
         try {
 
-            const userResponse = await this.usersModel.find({ Company_Id: Company_Id})
+            const userResponse = await this.usersModel.find()
             console.log(userResponse)
             if (userResponse) {
                 return {
