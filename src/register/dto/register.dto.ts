@@ -2,23 +2,23 @@ import { IsString, IsEmail, IsNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 export class appRegisterDto {
     @ApiProperty()
-    UserId: string;
+    FirstName: string;
     
     @ApiProperty()
     @IsString()
-    UserName: string;
+    LastName: string;
 
     @ApiProperty()
     @IsEmail()
     Email: string;
 
-    @ApiProperty()
-    @IsString()
-    MobileNum:number;
+    // @ApiProperty()
+    // @IsString()
+    // MobileNum:number;
 
-    @ApiProperty()
-    @IsString()
-    Password: string;
+    // @ApiProperty()
+    // @IsString()
+    // Password: string;
 }
 
 export class AppUserLogin {

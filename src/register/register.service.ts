@@ -11,14 +11,14 @@ export class RegisterService {
     async Create(req: appRegisterDto) {
 
         try {
-            const loginRes = await this.userModel.findOne({ $or: [{ Email: req.Email }, { Mobile: req.MobileNum }] })
+            // const loginRes = await this.userModel.findOne({ $or: [{ Email: req.Email }, { Mobile: req.MobileNum }] })
 
-            if (loginRes) {
-                return {
-                    statusCode: HttpStatus.CONFLICT,
-                    message: `User Already Exits with ${loginRes.Email} and ${loginRes.MobileNum}`
-                }
-            }
+            // if (loginRes) {
+            //     return {
+            //         statusCode: HttpStatus.CONFLICT,
+            //         message: `User Already Exits with ${loginRes.Email} and ${loginRes.MobileNum}`
+            //     }
+            // }
 
             const registerRes = await this.userModel.create(req)
             if (registerRes) {
@@ -29,7 +29,7 @@ export class RegisterService {
                         authentication: {
                             UserId: registerRes.UserId,
                             Email: registerRes.Email,
-                            MobileNum: registerRes.MobileNum
+                            
                         }
                     }
                 }
@@ -49,39 +49,39 @@ export class RegisterService {
         }
     }
 
-    async Login(req: AppUserLogin) {
-        try {
+    // async Login(req: AppUserLogin) {
+    //     try {
 
-            const loginRes = await this.userModel.findOne({ $or: [{ Email: req.Email }, { MobileNum: req.MobileNum }] }).lean()
-            if (loginRes) {
-                if (loginRes.Password === req.Password) {
+    //         const loginRes = await this.userModel.findOne({ $or: [{ Email: req.Email }, { MobileNum: req.MobileNum }] }).lean()
+    //         if (loginRes) {
+    //             if (loginRes.Password === req.Password) {
 
-                    return {
-                        statusCode: HttpStatus.OK,
-                        message: "Login SuccessFully",
-                        authentication: {
-                            UserId: loginRes.UserId,
-                            Email: loginRes.Email
-                        }
-                    }
-                }
+    //                 return {
+    //                     statusCode: HttpStatus.OK,
+    //                     message: "Login SuccessFully",
+    //                     authentication: {
+    //                         UserId: loginRes.UserId,
+    //                         Email: loginRes.Email
+    //                     }
+    //                 }
+    //             }
 
-                return {
-                    statusCode: HttpStatus.UNAUTHORIZED,
-                    message: "Invalid Password"
-                }
+    //             return {
+    //                 statusCode: HttpStatus.UNAUTHORIZED,
+    //                 message: "Invalid Password"
+    //             }
 
-            }
-            return {
-                statusCode: HttpStatus.NOT_FOUND,
-                message: "User Not Found"
+    //         }
+    //         return {
+    //             statusCode: HttpStatus.NOT_FOUND,
+    //             message: "User Not Found"
 
-            }
-        } catch (error) {
-            return {
-                statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-                message: error.message,
-            };
-        }
-    }
+    //         }
+    //     } catch (error) {
+    //         return {
+    //             statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+    //             message: error.message,
+    //         };
+    //     }
+    // }
 }

@@ -6,7 +6,7 @@ import { RegisterService } from './register.service';
 export class RegisterController {
 
     constructor(private registerService: RegisterService) { }
-    @Post('/register')
+    @Post()
     async create(@Body() req: appRegisterDto) {
         try {
             const result = await this.registerService.Create(req)
@@ -22,18 +22,18 @@ export class RegisterController {
 
     }
 
-    @Post('/login')
-    async login(@Body() req: AppUserLogin) {
-        try {
-            const result = await this.registerService.Login(req)
-            return result
-        } catch (error) {
-            return {
-                statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-                message: error.message,
-            };
-        }
+    // @Post('/login')
+    // async login(@Body() req: AppUserLogin) {
+    //     try {
+    //         const result = await this.registerService.Login(req)
+    //         return result
+    //     } catch (error) {
+    //         return {
+    //             statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+    //             message: error.message,
+    //         };
+    //     }
 
-    }
+    // }
 
 }

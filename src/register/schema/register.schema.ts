@@ -7,25 +7,27 @@ export class AppUsers extends Document{
     @Prop({required : true , unique:true , default : uuid})
     UserId: string
     @Prop()
-    UserName : string
+    FirstName : string
+    @Prop()
+    LastName : string
     @Prop()
     Email : string
-    @Prop()
-    MobileNum : string
-    @Prop()
-    Password : string
-    @Prop()
-    otp: string;
-    @Prop()
-    otpExpiryTime: string;
-    @Prop({ default: false })
-    @IsOptional()
-    isDeleted?: boolean;
-    @Prop({default: "Active"})
-    status:string
+    // @Prop()
+    // MobileNum : string
+    // @Prop()
+    // Password : string
+    // @Prop()
+    // otp: string;
+    // @Prop()
+    // otpExpiryTime: string;
+    // @Prop({ default: false })
+    // @IsOptional()
+    // isDeleted?: boolean;
+    // @Prop({default: "Active"})
+    // status:string
    
-    @Prop()
-    Product_id:string
+    // @Prop()
+    // Product_id:string
 
    // @Prop()
     //Rating:number
