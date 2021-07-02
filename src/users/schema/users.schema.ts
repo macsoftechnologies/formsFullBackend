@@ -10,7 +10,7 @@ export class users extends Document{
     // form: string
     @Prop({ unique:true , default : uuid})
     UserId: string
-    @Prop({ unique:true})
+    @Prop()
     Email: Email[]
     @Prop({default: "Active"})
     UserStatus: string
