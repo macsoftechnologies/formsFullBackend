@@ -2,6 +2,7 @@ import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { appRegisterDto, AppUserLogin } from './dto/register.dto';
+import { registerModule } from './register.module';
 import { AppUsers } from './schema/register.schema';
 
 @Injectable()
@@ -29,7 +30,8 @@ export class RegisterService {
                         authentication: {
                             UserId: registerRes.UserId,
                             Email: registerRes.Email,
-                            
+                            FirstName: registerRes.FirstName,
+                            LastName: registerRes.FirstName
                         }
                     }
                 }
@@ -48,7 +50,35 @@ export class RegisterService {
             };
         }
     }
+ 
+    async UsersList() {
+        try {
 
+            const userResponse = await this.userModel.find()
+            console.log(userResponse)
+            if (userResponse) {
+                return {
+                    StatusCode: HttpStatus.OK,
+                    Message: 'List of Users',
+                    Data: {
+                        UserDetails: userResponse
+                    }
+
+                }
+            }
+            return {
+                StatusCode: HttpStatus.BAD_REQUEST,
+                Message: "InValid Request"
+            }
+
+        } catch (error) {
+            return {
+                StatusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                Message: error
+
+            }
+        }
+    }
     // async Login(req: AppUserLogin) {
     //     try {
 
