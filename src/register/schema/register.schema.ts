@@ -14,17 +14,13 @@ export class AppUsers extends Document{
     MobileNum : string
     @Prop()
     Password : string
-   
     @Prop()
     otp: string;
-  
     @Prop()
     otpExpiryTime: string;
-
     @Prop({ default: false })
     @IsOptional()
     isDeleted?: boolean;
-
     @Prop({default: "Active"})
     status:string
    
