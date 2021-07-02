@@ -8,9 +8,9 @@ export class addmore{
 export class formsManage extends Document{
     @Prop()
     Email:string
-    @Prop({ default: 'pending', required: true})
+    @Prop({ default: 'pending'})
     Allow?:string
-    @Prop({required: true})
+    @Prop()
     Values:string
     @Prop()
     AddMore: addmore[]
