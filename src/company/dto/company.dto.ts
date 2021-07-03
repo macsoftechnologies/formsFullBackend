@@ -7,6 +7,13 @@ export class companyCreationDto{
     status: string
 }
 
+export class updateCompanyDto{
+    @IsNotEmpty()
+    CompanyName: string
+    CompanyId: string
+    status: string
+}
+
 export class DeleteCompanyDto{
     DeleteType : string
     CompanyId:string

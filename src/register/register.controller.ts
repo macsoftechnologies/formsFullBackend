@@ -1,5 +1,5 @@
-import { Body, Controller, Get, HttpStatus, Post } from '@nestjs/common';
-import { appRegisterDto, AppUserLogin } from './dto/register.dto';
+import { Body, Controller, Get, HttpStatus, Post, Put } from '@nestjs/common';
+import { appRegisterDto, AppUserLogin, updateUser } from './dto/register.dto';
 import { RegisterService } from './register.service';
 
 @Controller('register')
@@ -34,6 +34,20 @@ export class RegisterController {
                 }
             }
         }
+    
+
+    @Put('/update')
+    async userUpdate(@Body() req: appRegisterDto) {
+        console.log(req,'update')
+        try {
+            const result = await this.registerService.updateUser(req)
+            return result
+        } catch (error) {
+            return {
+                statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                message: error.message,
+            };
+        }
     }
 
     // @Post('/login')
@@ -49,5 +63,5 @@ export class RegisterController {
     //     }
 
     // }
-
+}
 

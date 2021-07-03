@@ -1,7 +1,7 @@
 import { Injectable, Post, HttpStatus, Body } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { companyCreationDto, DeleteCompanyDto } from './dto/company.dto';
+import { companyCreationDto, DeleteCompanyDto, updateCompanyDto } from './dto/company.dto';
 import { Company } from './schema/company.schema';
 @Injectable()
 export class CompanyService {
@@ -93,20 +93,20 @@ export class CompanyService {
 
     }
    
-  /*  async UpdateUser(body: updateUserDto) {
+  async UpdateCompany(body: updateCompanyDto) {
         try {
              console.log(body)
-            const updateRes = await this.companyModel.updateOne({ CompanyId: body.CompanyId ,CompanyName: body.CompanyName},{Users:body.Users})
+            const updateRes = await this.companyModel.updateOne({ CompanyId: body.CompanyId},{$set : {CompanyName : body.CompanyName}})
              console.log(updateRes, "update,,res")
             if (updateRes.nModified == 1) {
                 return {
                     StatusCode: HttpStatus.OK,
-                    Message: "User added SuccessFully"
+                    Message: "Company updated SuccessFully"
                 }
             }
             return {
                 StatusCode: HttpStatus.BAD_REQUEST,
-                Message: "Updated Failed"
+                Message: "Update Failed"
             }
         } catch (error) {
             return {
@@ -115,5 +115,5 @@ export class CompanyService {
             }
         }
       }
-  */     
+      
 }

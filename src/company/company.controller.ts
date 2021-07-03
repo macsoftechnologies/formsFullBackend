@@ -1,6 +1,6 @@
 import { Controller, Post, Body, HttpStatus, Get, Delete, Put, Param } from '@nestjs/common';
 import { CompanyService } from './company.service';
-import { companyCreationDto, DeleteCompanyDto } from './dto/company.dto';
+import { companyCreationDto, DeleteCompanyDto, updateCompanyDto } from './dto/company.dto';
 
 @Controller('company')
 export class CompanyController {
@@ -48,11 +48,11 @@ async deleteUser(@Body() req: DeleteCompanyDto) {
   }
 } 
 
-/*@Put('/update')
-async update(@Body() req: updateUserDto) {
+@Put('/update')
+async update(@Body() req: updateCompanyDto) {
     console.log(req)
     try {
-        const result = await this.companyService.UpdateUser(req)
+        const result = await this.companyService.UpdateCompany(req)
         return result
     } catch (error) {
         return {
@@ -61,6 +61,5 @@ async update(@Body() req: updateUserDto) {
         };
     }
 }
-*/
 
 }

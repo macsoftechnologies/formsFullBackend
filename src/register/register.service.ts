@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { appRegisterDto, AppUserLogin } from './dto/register.dto';
+import { appRegisterDto, AppUserLogin, updateUser } from './dto/register.dto';
 import { registerModule } from './register.module';
 import { AppUsers } from './schema/register.schema';
 
@@ -78,6 +78,31 @@ export class RegisterService {
 
             }
         }
+}
+        async updateUser(body: appRegisterDto) {
+            try {
+                 console.log(body, "body............")
+                
+            const updateRes = await this.userModel.updateOne({UserId : body.UserId} ,{$set : {Email : body.Email, FirstName: body.FirstName, LastName: body.LastName}})
+                //const updateRes = await this.userModel.updateOne({ UserId: body.UserId })
+                 console.log(updateRes, "update,,res")
+                if (updateRes.nModified == 1) {
+                    return {
+                        StatusCode: HttpStatus.OK,
+                        Message: "User Updated SuccessFully"
+                    }
+                }
+                return {
+                    StatusCode: HttpStatus.BAD_REQUEST,
+                    Message: "Updated Failed"
+                }
+            } catch (error) {
+                return {
+                    StatusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                    Message: error.message
+                }
+            }
+          }
     }
     // async Login(req: AppUserLogin) {
     //     try {
@@ -114,4 +139,4 @@ export class RegisterService {
     //         };
     //     }
     // }
-}
+

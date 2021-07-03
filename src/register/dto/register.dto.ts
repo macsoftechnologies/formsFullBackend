@@ -11,7 +11,9 @@ export class appRegisterDto {
     @ApiProperty()
     @IsEmail()
     Email: string;
-
+   
+    
+    UserId: string
     // @ApiProperty()
     // @IsString()
     // MobileNum:number;
@@ -20,7 +22,20 @@ export class appRegisterDto {
     // @IsString()
     // Password: string;
 }
+export class updateUser{
+    @ApiProperty()
+    UserId : string
 
+    @ApiProperty()
+    FirstName : string
+
+    @ApiProperty()
+    LastName: string
+
+    @ApiProperty()
+    Email:string
+    
+}
 export class AppUserLogin {
     
     @ApiProperty()
