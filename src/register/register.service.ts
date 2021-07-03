@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { appRegisterDto, AppUserLogin, updateUser } from './dto/register.dto';
+import { appRegisterDto, AppUserLogin, DeleteUserDto, updateUser } from './dto/register.dto';
 import { registerModule } from './register.module';
 import { AppUsers } from './schema/register.schema';
 
@@ -78,6 +78,7 @@ export class RegisterService {
 
             }
         }
+
 }
         async updateUser(body: appRegisterDto) {
             try {
@@ -103,6 +104,38 @@ export class RegisterService {
                 }
             }
           }
+
+ 
+          async delete(body: DeleteUserDto) {
+            try {
+    
+                  console.log(body)
+                const deleteRes = await this.userModel.deleteOne({UserId:body.UserId});
+            console.log(deleteRes, "deleteRes...")
+    
+                if (deleteRes.n == 1) {
+                    return {
+                        statusCode: HttpStatus.OK,
+                        message: 'User deleted successfully',
+                
+                    };
+                }
+                return {
+                    StatusCode: HttpStatus.BAD_REQUEST,
+                    Message: "User deletion Failed"
+                }
+                
+            } catch (error) {
+                let error_response = {
+                    statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                    data: null,
+                    message: error,
+                };
+                return error_response;
+            }
+    
+        }
+    
     }
     // async Login(req: AppUserLogin) {
     //     try {

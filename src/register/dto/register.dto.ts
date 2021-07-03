@@ -51,3 +51,8 @@ export class AppUserLogin {
     @IsString()
     Password: string
 }
+
+export class DeleteUserDto{
+    DeleteType : string
+    UserId:string
+    }

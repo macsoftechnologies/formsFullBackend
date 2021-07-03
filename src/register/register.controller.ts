@@ -1,5 +1,5 @@
 import { Body, Controller, Get, HttpStatus, Post, Put } from '@nestjs/common';
-import { appRegisterDto, AppUserLogin, updateUser } from './dto/register.dto';
+import { appRegisterDto, AppUserLogin, DeleteUserDto, updateUser } from './dto/register.dto';
 import { RegisterService } from './register.service';
 
 @Controller('register')
@@ -50,6 +50,19 @@ export class RegisterController {
         }
     }
 
+    @Post('/delete')
+    async deleteUser(@Body() req: DeleteUserDto) { 
+      try {
+        let response = await this.registerService.delete(req);
+    
+        return response
+      } catch (error) {
+        return {
+            statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+            message: error.message,
+        };
+      }
+    } 
     // @Post('/login')
     // async login(@Body() req: AppUserLogin) {
     //     try {
