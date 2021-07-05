@@ -8,14 +8,14 @@ export class addmore{
 @Schema({ timestamps: true })
 export class formType extends Document{
    
-    @Prop({required : true})
+    @Prop()
     Form_Type: string
-    @Prop({required : true})
+    @Prop()
     Endpoint : string
     @Prop()
     AddMore: addmore[]
-    @Prop({required : true})
-    Company_Name : string
+    
+    
     @Prop({ default: false })
     @IsOptional()
     isDeleted?: boolean;
