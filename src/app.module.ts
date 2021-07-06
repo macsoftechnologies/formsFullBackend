@@ -15,6 +15,9 @@ import { registerModule } from './register/register.module';
 
 import { UserDataService } from './user-data/user-data.service';
 import { userDataModule } from './user-data/userData.module';
+import { AdminService } from './admin/admin.service';
+import { AdminController } from './admin/admin.controller';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [ MongooseModule.forRootAsync({useClass : MongooseConfigService}),
@@ -24,7 +27,8 @@ import { userDataModule } from './user-data/userData.module';
             usersModule,
             formsManageModule,
             registerModule,
-          userDataModule],
+          userDataModule,
+        AdminModule],
   controllers: [AppController, LoginController],
   providers: [AppService, LoginService],
 })
