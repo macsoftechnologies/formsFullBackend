@@ -12,6 +12,10 @@ import { LoginController } from './login/login.controller';
 import { LoginService } from './login/login.service';
 import { registerModule } from './register/register.module';
 
+
+import { UserDataService } from './user-data/user-data.service';
+import { userDataModule } from './user-data/userData.module';
+
 @Module({
   imports: [ MongooseModule.forRootAsync({useClass : MongooseConfigService}),
              formTypeModule, 
@@ -19,7 +23,8 @@ import { registerModule } from './register/register.module';
              companyModule,
             usersModule,
             formsManageModule,
-            registerModule],
+            registerModule,
+          userDataModule],
   controllers: [AppController, LoginController],
   providers: [AppService, LoginService],
 })

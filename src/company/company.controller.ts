@@ -48,7 +48,7 @@ async deleteUser(@Body() req: DeleteCompanyDto) {
   }
 } 
 
-@Put('/update')
+@Post('/update')
 async update(@Body() req: updateCompanyDto) {
     console.log(req)
     try {

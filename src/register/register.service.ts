@@ -31,7 +31,7 @@ export class RegisterService {
                             UserId: registerRes.UserId,
                             Email: registerRes.Email,
                             FirstName: registerRes.FirstName,
-                            LastName: registerRes.FirstName
+                            LastName: registerRes.LastName
                         }
                     }
                 }
