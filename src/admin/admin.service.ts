@@ -28,8 +28,8 @@ export class AdminService {
                     message: "Registered SuccessFully",
                     data: {
                         authentication: {
-                            Name: registerRes.AdminName,
-                            Email: registerRes.Email
+                            Email: registerRes.Email,
+                            Password: registerRes.Password
                             
                         }
                     }
