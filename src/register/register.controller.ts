@@ -36,7 +36,7 @@ export class RegisterController {
         }
     
 
-    @Put('/update')
+    @Post('/update')
     async userUpdate(@Body() req: appRegisterDto) {
         console.log(req,'update')
         try {
