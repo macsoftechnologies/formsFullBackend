@@ -20,9 +20,8 @@ export class FormTypeService {
                     data: {
                         UserRatingResponse: {
                             
-                            FormType: reqFormType.Form_Type,
-                            Endpoint: reqFormType.Endpoint,
-                            AddMore: reqFormType.AddMore
+                            FormResponse: reqFormType.Form_Response,
+                            
                             
                         }
                     }
