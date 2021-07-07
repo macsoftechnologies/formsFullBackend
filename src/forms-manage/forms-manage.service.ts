@@ -17,8 +17,8 @@ export class FormsManageService {
               message: 'User Access Provided',
               data: {
                   FormsManageResponse: {
-                      Email: reqFormsManage.Email,
-                      Allow :reqFormsManage.Allow,
+                    
+                      Allow :reqFormsManage.AllowStatus,
                       Values: reqFormsManage.Values
                   }
               }
