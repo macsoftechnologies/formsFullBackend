@@ -18,6 +18,7 @@ import { userDataModule } from './user-data/userData.module';
 import { AdminService } from './admin/admin.service';
 import { AdminController } from './admin/admin.controller';
 import { AdminModule } from './admin/admin.module';
+import { formManageKeyModule } from './form-manage-key/formManageKey.module';
 
 @Module({
   imports: [ MongooseModule.forRootAsync({useClass : MongooseConfigService}),
@@ -28,7 +29,8 @@ import { AdminModule } from './admin/admin.module';
             formsManageModule,
             registerModule,
           userDataModule,
-        AdminModule],
+        AdminModule, 
+      formManageKeyModule],
   controllers: [AppController, LoginController],
   providers: [AppService, LoginService],
 })

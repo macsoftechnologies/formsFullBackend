@@ -1,4 +1,5 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsEmail, IsNotEmpty } from 'class-validator';
+
 export  class PhoneNumber{
     phoneNumber:string
     phNumberStatus:string
@@ -16,17 +17,12 @@ export  class Email{
     EmailId:string
     emailIdStatus:string
 }
-// export class lName {
-//     lname:string
-// }
+
 export class LastName{
     lastname:string
-    // lName:lName[]
     lastNameStatus:string
 }
-// export class fName{
-//     fname:string
-// }
+
 export  class FirstName{
     firstName:string
     firstNameStatus:string
@@ -35,12 +31,17 @@ export  class FirstName{
 export class addMore{
     addmore:string
 }
-export class customerAdminDto{
-    FirstName: string
-    LastName: string
-    Email: string
-    PhoneNumber: string
-    Country: string
-    State: string
-    AddMore:addMore[]
+
+export class formManageKeyDto{
+   
+  formType: string
+  Email: string
+  FirstName: string
+  LastName: string
+  PhoneNumber: string
+  Country: string
+  State: string
+  UserId:string
+  UserStatus:string
+  AddMore:addMore[]
 }
