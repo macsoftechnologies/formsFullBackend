@@ -5,13 +5,21 @@ import { IsOptional } from 'class-validator';
 export class addmore{
     addmore:string
 }
+
+export class form_Type{
+    formType:string
+}
+
+export class endPoint{
+  endpoint:string
+}
 @Schema({ timestamps: true })
 export class formType extends Document{
    
     @Prop()
-    Form_Type: string
+    Form_Type: form_Type[]
     @Prop()
-    Endpoint : string
+    Endpoint : endPoint[]
     @Prop()
     AddMore: addmore[]
     
