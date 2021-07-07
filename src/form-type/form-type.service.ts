@@ -41,10 +41,10 @@ export class FormTypeService {
         }
     }
 
-    async formsList(Company_Name: string) {
+    async formsList() {
         try {
 
-            const formsResponse = await this.formTypeModel.find({ Company_Name: Company_Name})
+            const formsResponse = await this.formTypeModel.find()
             console.log(formsResponse)
             if (formsResponse) {
                 return {

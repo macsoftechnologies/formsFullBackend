@@ -24,10 +24,10 @@ export class FormTypeController {
         }
     
         @Get('/listOfforms')
-        async listOfForms(@Query('Company_Name') Company_Name : string) {
-            console.log(Company_Name)
+        async listOfForms() {
+            console.log()
             try {
-                const response = await this.formTypeService.formsList(Company_Name)
+                const response = await this.formTypeService.formsList()
                 return response
             } catch (error) {
                 return {
