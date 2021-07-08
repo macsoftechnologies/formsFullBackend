@@ -5,8 +5,7 @@ import { v4 as uuid } from 'uuid';
 @Schema({ timestamps: true })
 export class Admin extends Document{
    
-    @Prop()
-    AdminName : string
+    
     @Prop()
     Email : string
     // @Prop()

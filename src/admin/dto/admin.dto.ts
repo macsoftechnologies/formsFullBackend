@@ -4,9 +4,9 @@ import { IsEmail, IsString } from "class-validator"
 export class AdminRegister {
    
     
-    @ApiProperty()
-    @IsString()
-    AdminName: string;
+    // @ApiProperty()
+    // @IsString()
+    // AdminName: string;
 
     @ApiProperty()
     @IsEmail()
@@ -24,16 +24,12 @@ export class AdminRegister {
 
 export class AdminLogin {
     
-    @ApiProperty()
-    @IsString()
-    AdminName: string
+  
     
     @ApiProperty()
-    @IsString()
     @IsEmail()
     Email: string
     
     @ApiProperty()
-    @IsString()
     Password: string
 }

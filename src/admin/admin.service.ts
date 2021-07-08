@@ -56,7 +56,7 @@ export class AdminService {
     async Login(req: AdminLogin) {
     try {
 
-        const loginRes = await this.adminModel.findOne({ $or: [{ Email: req.Email }, { AdminName: req.AdminName }] }).lean()
+        const loginRes = await this.adminModel.findOne({ $or: [{ Email: req.Email }, { Password: req.Password }] }).lean()
         if (loginRes) {
             if (loginRes.Password === req.Password) {
 
@@ -64,7 +64,6 @@ export class AdminService {
                     statusCode: HttpStatus.OK,
                     message: "Login SuccessFully",
                     authentication: {
-                        AdminName: loginRes.AdminName,
                         Email: loginRes.Email
                     }
                 }
