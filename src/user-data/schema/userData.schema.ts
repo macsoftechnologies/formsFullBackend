@@ -7,10 +7,6 @@ export class UserData extends Document{
     @Prop({ unique:true , default : uuid})
     id: string
     @Prop()
-    firstName : string
-    @Prop()
-    lastName : string
-    @Prop()
     email : string
     @Prop()
     name : string

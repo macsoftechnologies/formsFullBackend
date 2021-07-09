@@ -22,8 +22,7 @@ export class UserDataService {
                         authentication: {
                             Email: registerRes.email,
                             Name: registerRes.name,
-                            FirstName: registerRes.firstName,
-                            LastName: registerRes.lastName
+                            
                         }
                     }
                 }
