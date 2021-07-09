@@ -7,8 +7,8 @@ export class UserData extends Document{
     @Prop({ unique:true , default : uuid})
     id: string
     @Prop()
-    email : string
+    Email : string
     @Prop()
-    name : string
+    Name : string
    }
 export const  UserDataSchema = SchemaFactory.createForClass(UserData);

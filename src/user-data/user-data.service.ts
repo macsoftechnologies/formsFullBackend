@@ -20,8 +20,8 @@ export class UserDataService {
                     message: "Registered SuccessFully",
                     data: {
                         authentication: {
-                            Email: registerRes.email,
-                            Name: registerRes.name,
+                            Email: registerRes.Email,
+                            Name: registerRes.Name,
                             
                         }
                     }

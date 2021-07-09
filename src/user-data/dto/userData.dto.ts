@@ -3,12 +3,12 @@ import { ApiProperty } from '@nestjs/swagger';
 export class userDataDto {
     
     @ApiProperty()
-    @IsEmail()
-    email: string;
+    
+    Email: string;
    
     
     id: string
 
-    name:string
+    Name:string
   
 }
