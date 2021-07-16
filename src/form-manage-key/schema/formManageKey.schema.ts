@@ -33,11 +33,14 @@ export  class FirstName{
 export class addMore{
     addmore:string
 }
+export class formtype{
+    FormType:string
+}
 @Schema({timestamps: true})
 export class formManageKey extends Document{
 
   @Prop() 
-  formType: string
+  formType: formtype[]
   @Prop()
   Email: string
   @Prop()

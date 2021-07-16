@@ -32,9 +32,13 @@ export class addMore{
     addmore:string
 }
 
+export class formtype{
+    FormType: string
+}
+
 export class formManageKeyDto{
    
-  formType: string
+  formType: formtype[]
   Email: string
   FirstName: string
   LastName: string
