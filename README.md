@@ -71,3 +71,16 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+After Downloading run npm i command,
+Install nestjs
+
+nestjs cli version : "7.6.0",
+port number: "3000"
+
+mongodb uri:
+For atlas: "mongodb+srv://macsof:macsof@nextlevelcarwash.yjs3i.mongodb.net/formsFul?retryWrites=true&w=majority",
+[replace with your db connection link from mongodb atlas and change username and password in the link]
+For localDB: "mongodb://localhost/formsFul".
+
+Command to run the code: npm run start:dev
