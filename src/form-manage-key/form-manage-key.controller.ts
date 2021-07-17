@@ -1,4 +1,5 @@
 import { Body, Controller, HttpStatus, Post } from '@nestjs/common';
+import { request } from 'express';
 import { formManageKeyDto } from './dto/formManageKey.dto';
 import { FormManageKeyService } from './form-manage-key.service';
 
@@ -10,7 +11,14 @@ export class FormManageKeyController {
     @Post()
     async create(@Body() req: formManageKeyDto) {
         try {
-            const result = await this.formManageKeyService.createKey(req)
+            const records = req.formType.map((formType) => {
+                return {
+                  ...req,
+                  formType:formType.FormType,
+                };
+              });
+              console.log(records)
+            const result = await this.formManageKeyService.createKey(records)
             console.log("result", result);
             
             return result

@@ -10,7 +10,7 @@ export class FormManageKeyService {
   
     constructor(@InjectModel(formManageKey.name) private customerAdminModel: Model<formManageKey>) { }
    
-    async createKey(req: formManageKeyDto) {
+    async createKey(req: any[]) {
         try {
             const customerAdminKeys = await this.customerAdminModel.create(req)
             if (customerAdminKeys) {
