@@ -36,16 +36,47 @@ export class formtype{
     FormType: string
 }
 
+export class EmailStatus{
+    mailId: string
+    status:string
+}
+
+export class FirstNameStatus{
+    Fname: string
+    status:string
+}
+
+export class LastNameStatus{
+    Lname: string
+    status:string
+}
+
+export class PhNumberStatus{
+    PhNum: string
+    status:string
+}
+
+export class CountryStatus{
+    country: string
+    status:string
+}
+export class StateStatus{
+    state: string
+    status:string
+}
+
+
 export class formManageKeyDto{
    
   formType: formtype[]
-  Email: string
-  FirstName: string
-  LastName: string
-  PhoneNumber: string
-  Country: string
-  State: string
+  Email: EmailStatus
+  FirstName: FirstNameStatus
+  LastName: LastNameStatus
+  PhoneNumber: PhNumberStatus
+  Country: CountryStatus
+  State: StateStatus
   UserId:string
   UserStatus:string
   AddMore:addMore[]
+  
 }
