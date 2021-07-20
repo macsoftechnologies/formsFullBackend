@@ -35,7 +35,12 @@ export  class FirstName{
 export class addMore{
     addmore:string
 }
+
+export class formType{
+    formtype:string
+}
 export class customerAdminDto{
+    FormType: formType[]
     FirstName: string
     LastName: string
     Email: string

@@ -20,9 +20,9 @@ export class CustomerAdminService {
                     data: {
                         customerAdminKeys: {
                             
-                            firstName: customerAdminKeys.firstName,
+                            firstName: customerAdminKeys.FirstName,
                             Email: customerAdminKeys.Email,
-                            phoneNumber: customerAdminKeys.phoneNumber
+                            phoneNumber: customerAdminKeys.PhoneNumber
                             
                         }
                     }

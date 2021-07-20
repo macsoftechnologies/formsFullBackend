@@ -1,27 +1,28 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { formManageKeyDto } from './dto/formManageKey.dto';
-import { formManageKey } from './schema/formManageKey.schema';
+import { urlSelectDto } from './dto/urlSelect.dto';
+import { urlSelect } from './schema/urlSelect.schema';
 
 @Injectable()
-export class FormManageKeyService {
+export class UrlSelectService {
+
 
   
-    constructor(@InjectModel(formManageKey.name) private FormManageKeyModel: Model<formManageKey>) { }
+    constructor(@InjectModel(urlSelect.name) private urlSelectModel: Model<urlSelect>) { }
    
-    async createKey(req: any[]) {
+    async formTypeReq(req: urlSelectDto) {
         try {
-            const formManageKeys = await this.FormManageKeyModel.create(req)
-            if (formManageKeys) {
+            const urlData = await this.urlSelectModel.create(req)
+            if (urlData) {
                 return {
                     statusCode: HttpStatus.OK,
                     message: "Thank you for registering the formType",
                     data: {
-                        formManageKeys: {
+                        UserRatingResponse: {
                             
-                            firstName: formManageKeys.FirstName,
-                            Email: formManageKeys.Email
+                            FormResponse: urlData.urlValues
+                            
                             
                         }
                     }
@@ -40,5 +41,4 @@ export class FormManageKeyService {
             };
         }
     }
-
 }

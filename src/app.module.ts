@@ -19,6 +19,9 @@ import { AdminService } from './admin/admin.service';
 import { AdminController } from './admin/admin.controller';
 import { AdminModule } from './admin/admin.module';
 import { formManageKeyModule } from './form-manage-key/formManageKey.module';
+import { UrlSelectModule } from './url-select/urlSelect.module';
+import { GlobalValuesModule } from './global-values/globalValues.module';
+
 
 @Module({
   imports: [ MongooseModule.forRootAsync({useClass : MongooseConfigService}),
@@ -30,7 +33,9 @@ import { formManageKeyModule } from './form-manage-key/formManageKey.module';
             registerModule,
           userDataModule,
         AdminModule, 
-      formManageKeyModule],
+        GlobalValuesModule,
+      formManageKeyModule,
+    UrlSelectModule],
   controllers: [AppController, LoginController],
   providers: [AppService, LoginService],
 })
