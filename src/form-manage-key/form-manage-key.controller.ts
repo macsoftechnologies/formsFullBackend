@@ -1,7 +1,8 @@
-import { Body, Controller, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Query } from '@nestjs/common';
 import { request } from 'express';
 import { formManageKeyDto } from './dto/formManageKey.dto';
 import { FormManageKeyService } from './form-manage-key.service';
+import { EmailStatus } from './schema/formManageKey.schema';
 
 @Controller('form-manage-key')
 export class FormManageKeyController {
@@ -29,5 +30,19 @@ export class FormManageKeyController {
             };
         }
 
+    }
+
+    @Get('/listOfforms')
+    async listOfForms(@Query('Email') Email : any) {
+        console.log()
+        try {
+            const response = await this.formManageKeyService.formsList(Email)
+            return response
+        } catch (error) {
+            return {
+                StatusCode : HttpStatus.INTERNAL_SERVER_ERROR,
+                Message : error
+            }
+        }
     }
 }
