@@ -35,5 +35,34 @@ export class FormsManageService {
             };
         }
     }
+    
+    async formsList() {
+        try {
+
+            const formsResponse = await this.formsManageModel.find()
+            console.log(formsResponse)
+            if (formsResponse) {
+                return {
+                    StatusCode: HttpStatus.OK,
+                    Message: 'List of Forms',
+                    Data: {
+                        UserDetails: formsResponse
+                    }
+
+                }
+            }
+            return {
+                StatusCode: HttpStatus.BAD_REQUEST,
+                Message: "InValid Request"
+            }
+
+        } catch (error) {
+            return {
+                StatusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+                Message: error
+
+            }
+        }
+    }
  
 }
