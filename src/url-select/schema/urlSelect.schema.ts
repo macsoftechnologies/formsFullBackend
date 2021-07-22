@@ -6,20 +6,39 @@ export class addmore{
     addmore:string
 }
 
-export class values{
-   values:UrlValues
+export class allow{
+    Urls:urls[]
 }
 
-export class UrlValues{
-    Values:string
-    status:string
+export class urls{
+    urls:string
 }
+
+
+export class deny{
+    DenyUrls:denyurls[]
+}
+
+export class denyurls{
+    Denyurl:string
+}
+// export class values{
+//    values:UrlValues
+// }
+
+// export class UrlValues{
+//     Values:string
+//     status:string
+// }
 @Schema({ timestamps: true })
 export class urlSelect extends Document{
    
+    // @Prop()
+    // urlValues: values[]
     @Prop()
-    urlValues: values[]
-    
+    allow:allow
+    @Prop()
+    deny:deny
      @Prop()
     AddMore: addmore[]
     

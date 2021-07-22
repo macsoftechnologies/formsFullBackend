@@ -17,11 +17,12 @@ export class UrlSelectService {
             if (urlData) {
                 return {
                     statusCode: HttpStatus.OK,
-                    message: "Thank you for registering the formType",
+                    message: "Thank you for registering",
                     data: {
-                        UserRatingResponse: {
+                        UrlResponse: {
                             
-                            FormResponse: urlData.urlValues
+                            FormResponse: urlData.allow
+                            
                             
                             
                         }

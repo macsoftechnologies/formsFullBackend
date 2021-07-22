@@ -2,23 +2,44 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from 'mongoose';
 import { IsOptional } from 'class-validator';
 
-export class addmore{
-    addmore:string
+// export class addmore{
+//     addmore:string
+// }
+
+// export class values{
+//    values:GlobalValue
+// }
+
+// export class GlobalValue{
+//     Values:string
+//     status:string
+// }
+
+export class allow{
+    Global:global[]
 }
 
-export class values{
-   values:GlobalValue
+export class global{
+    global:string
 }
 
-export class GlobalValue{
-    Values:string
-    status:string
+
+export class deny{
+    DenyGlobal:denyglobal[]
+}
+
+export class denyglobal{
+    Denyglobal:string
 }
 @Schema({ timestamps: true })
 export class GlobalValues extends Document{
    
     @Prop()
-    globalValue: values[]
+    allow:allow
+    @Prop()
+    deny:deny
+    // @Prop()
+    // globalValue: values[]
     
     //  @Prop()
     // AddMore: addmore[]

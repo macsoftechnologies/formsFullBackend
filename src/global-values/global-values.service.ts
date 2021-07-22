@@ -15,9 +15,9 @@ async formTypeReq(req: GlobalValuesDto) {
                 statusCode: HttpStatus.OK,
                 message: "Thank you for registering the formType",
                 data: {
-                    UserRatingResponse: {
+                    globalResponse: {
                         
-                        FormResponse: urlData.globalValue
+                        FormResponse: urlData.allow
                         
                         
                     }
