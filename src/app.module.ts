@@ -21,6 +21,8 @@ import { AdminModule } from './admin/admin.module';
 import { formManageKeyModule } from './form-manage-key/formManageKey.module';
 import { UrlSelectModule } from './url-select/urlSelect.module';
 import { GlobalValuesModule } from './global-values/globalValues.module';
+import { ApplogsService } from './applogs/applogs.service';
+import { ApplogsModule } from './applogs/applogs.module';
 
 
 @Module({
@@ -35,7 +37,8 @@ import { GlobalValuesModule } from './global-values/globalValues.module';
         AdminModule, 
         GlobalValuesModule,
       formManageKeyModule,
-    UrlSelectModule],
+    UrlSelectModule,
+    ApplogsModule],
   controllers: [AppController, LoginController],
   providers: [AppService, LoginService],
 })
