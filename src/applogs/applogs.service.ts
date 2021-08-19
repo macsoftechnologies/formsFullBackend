@@ -1,4 +1,3 @@
-
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -19,14 +18,10 @@ export class ApplogsService {
                     message: "Log Added",
                     data: {
                         UserRatingResponse: {
-                            
                             FormResponse: reqLogs.id,
-                            
-                            
-                        }
+                         }
                     }
                 }
-
             }
             return {
                 statusCode: HttpStatus.BAD_REQUEST,

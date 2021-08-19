@@ -12,7 +12,7 @@ export class MongooseConfigService implements MongooseOptionsFactory {
     
     return {
       // uri:"",
-      uri:'mongodb+srv://macsof:macsof@nextlevelcarwash.yjs3i.mongodb.net/formsFul?retryWrites=true&w=majority',
+      uri:'mongodb://formfuladmin:Panther1%40%23@3.80.84.74:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false',
       useCreateIndex: true,
       keepAlive: true,
       useNewUrlParser: true,

@@ -19,12 +19,6 @@ export class formType extends Document{
    
     @Prop()
     Form_Response: formResponse[]
-    // @Prop()
-    // Endpoint : endPoint[]
-    // @Prop()
-    // AddMore: addmore[]
-    
-    
     @Prop({ default: false })
     @IsOptional()
     isDeleted?: boolean;

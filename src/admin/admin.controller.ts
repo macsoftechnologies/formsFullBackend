@@ -28,9 +28,7 @@ export class AdminController {
         }
     }
 
-    
-   
-    @Post('/login')
+   @Post('/login')
     async login(@Body() req: AdminLogin) {
         try {
             const result = await this.adminService.Login(req)
@@ -43,4 +41,5 @@ export class AdminController {
         }
 
     }
+
 }
