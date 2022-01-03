@@ -1,5 +1,5 @@
 import { Body, Controller, Get, HttpStatus, Post, Put } from '@nestjs/common';
-import { appRegisterDto, AppUserLogin, DeleteUserDto, updateUser } from './dto/register.dto';
+import { appRegisterDto,  DeleteUserDto, updateUser } from './dto/register.dto';
 import { RegisterService } from './register.service';
 
 @Controller('register')

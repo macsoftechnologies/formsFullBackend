@@ -36,7 +36,7 @@ export class updateUser{
     Email:string
     
 }
-export class AppUserLogin {
+export class AppUser {
     
     @ApiProperty()
     @IsString()

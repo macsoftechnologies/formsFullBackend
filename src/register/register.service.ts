@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { appRegisterDto, AppUserLogin, DeleteUserDto, updateUser } from './dto/register.dto';
+import { appRegisterDto,  DeleteUserDto, updateUser } from './dto/register.dto';
 import { registerModule } from './register.module';
 import { AppUsers } from './schema/register.schema';
 
@@ -149,7 +149,7 @@ export class RegisterService {
     //                     message: "Login SuccessFully",
     //                     authentication: {
     //                         UserId: loginRes.UserId,
-    //                         Email: loginRes.Email
+    //                         : loginRes.Email
     //                     }
     //                 }
     //             }
