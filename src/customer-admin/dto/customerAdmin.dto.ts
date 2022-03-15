@@ -21,7 +21,6 @@ export  class Email{
 // }
 export class LastName{
     lastname:string
-    // lName:lName[]
     lastNameStatus:string
 }
 // export class fName{
